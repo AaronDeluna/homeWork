@@ -16,9 +16,7 @@ public class Homework1 {
     }
 
     public static void ex2() {
-        //Дана строка
         String name = "     ПЕтРов Олег Иванович     ";
-        //Необходимо
         name = name.trim().toUpperCase();
         if (name.contains("ОВА")) {
             System.out.printf("Уважаемая %s", name);
@@ -28,15 +26,9 @@ public class Homework1 {
             System.out.printf("Неизвестное лицо %s", name);
         }
         System.out.println();
-        //1. убрать лишние пробелы,
-        //2. перевести текст в верхний регистр
-        //3. Если содержит "ова " то печатаем на экран: Уважаемая {name}
-        // Если содержит "ов " то печатаем на экран: Уважаемый {name}
-        // В иных случаях печатаем на экран: Неизвестное лицо {name}
     }
 
     public static void ex3() {
-        //У нас есть машина. В данной машине есть перечень проверок, перед запуском двигателя
         //Количество топлива
         double fuel = 10;
         //Работоспособен или нет двигатель
@@ -49,9 +41,6 @@ public class Homework1 {
         boolean isWheelWork3 = true;
         boolean isWheelWork4 = true;
 
-        //Поменять(убрать, поставить) логические операторы так, чтобы машина запускалась:
-        // когда топлива не меньше 10 литров, двигатель работает, колеса работают, нет ошибок
-        //В ином случае, машина не должна запускаться
         if (
                 fuel >= 10
                         && isEngineWork
@@ -68,20 +57,10 @@ public class Homework1 {
     }
 
     public static void ex4() {
-        // Работа на самостоятельное изучение функций класса String.
-        // Заменить в строке 'this is' на 'those are',
-        // получить индекс (число) второй буквы 'o' в строке. ПОЛУЧЕНИЕ ИНДЕКСА ЧЕРЕЗ ФУНКЦИЮ!
-        // Распечатать полученный индекс
         String simply = "this is simply. This is my favorite song.";
-
-        // Заменить 'this is' на 'those are'
         simply = simply.replaceFirst("this is", "those are");
-
-        // Найти индекс второй буквы 'o'
         int firstOIndex = simply.indexOf('o');
         int secondOIndex = simply.indexOf('o', firstOIndex + 1);
-
-        // Распечатать полученный индекс
         System.out.println("Индекс второй буквы 'o': " + secondOIndex);
     }
 
