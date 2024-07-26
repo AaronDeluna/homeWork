@@ -11,16 +11,12 @@ public class Calc {
         String operation = scanner.nextLine();
         double b = scanner.nextDouble();
 
-        if (operation.equals("+")) {
-            System.out.printf("%s + %s = %s", a, b, a + b);
-        } else if (operation.equals("-")) {
-            System.out.printf("%s - %s = %s", a, b, a - b);
-        } else if (operation.equals("*")) {
-            System.out.printf("%s * %s = %s", a, b, a * b);
-        } else if (operation.equals("/")) {
-            System.out.printf("%s / %s = %s", a, b, a / b);
-        } else {
-            System.out.println("Ошибка");
+        switch (operation) {
+            case "+" -> System.out.printf("%s + %s = %s", a, b, a + b);
+            case "-" -> System.out.printf("%s - %s = %s", a, b, a - b);
+            case "*" -> System.out.printf("%s * %s = %s", a, b, a * b);
+            case "/" -> System.out.printf("%s / %s = %s", a, b, a / b);
+            default -> System.out.println("Ошибка");
         }
 
         scanner.close();
