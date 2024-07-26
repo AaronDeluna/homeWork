@@ -73,6 +73,7 @@ public class Homework1 {
      * Принимается только при использовании класса BigDecimal в расчетах.
      */
     public static void advanced() {
+
         // Данные по продуктам
         BigDecimal sausagePrice = new BigDecimal("800");
         BigDecimal hamPrice = new BigDecimal("350");
@@ -139,6 +140,8 @@ public class Homework1 {
 
     private static BigDecimal calculateTax(BigDecimal profit) {
         BigDecimal tax = BigDecimal.ZERO;
+
+        double profitBeforeTaxes = 2_000_000;
 
         if (profit.compareTo(BigDecimal.valueOf(2_000_000)) > 0) {
             BigDecimal over2M = profit.subtract(BigDecimal.valueOf(2_000_000));
