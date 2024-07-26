@@ -1,5 +1,8 @@
 package homework;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Homework1 {
     public static void main(String[] args) {
         ex2();
@@ -70,59 +73,89 @@ public class Homework1 {
      * Принимается только при использовании класса BigDecimal в расчетах.
      */
     public static void advanced() {
-        double sausagePrice = 800;
-        double hamPrice = 350;
-        double neckPrice = 500;
+        // Данные по продуктам
+        BigDecimal sausagePrice = new BigDecimal("800");
+        BigDecimal hamPrice = new BigDecimal("350");
+        BigDecimal neckPrice = new BigDecimal("500");
 
-        double sausageCostLessThan1000 = 412;
-        double sausageCostBetween1000And2000 = 408;
-        double sausageCostMoreThan2000 = 404;
+        BigDecimal sausageCostUnder1000 = new BigDecimal("412");
+        BigDecimal sausageCost1000to2000 = new BigDecimal("408");
+        BigDecimal sausageCostOver2000 = new BigDecimal("404");
 
-        double hamCost = 275;
+        BigDecimal hamCost = new BigDecimal("275");
 
-        double neckCostLessThan500 = 311;
-        double neckCostMoreThan500 = 299;
+        BigDecimal neckCostUnder500 = new BigDecimal("311");
+        BigDecimal neckCostOver500 = new BigDecimal("299");
 
-        int sausageSold = 2000;
-        int hamSold = 8511;
-        int neckSold = 6988;
+        // Количество проданных продуктов
+        int sausageSoldKg = 2000;
+        int hamSoldKg = 8511;
+        int neckSoldKg = 6988;
 
-        double sausageIncome = sausagePrice * sausageSold;
-        double hamIncome = hamPrice * hamSold;
-        double neckIncome = neckPrice * neckSold;
-        double totalIncome = sausageIncome + hamIncome + neckIncome;
+        // Доходы
+        BigDecimal sausageIncome = sausagePrice.multiply(BigDecimal.valueOf(sausageSoldKg));
+        BigDecimal hamIncome = hamPrice.multiply(BigDecimal.valueOf(hamSoldKg));
+        BigDecimal neckIncome = neckPrice.multiply(BigDecimal.valueOf(neckSoldKg));
 
-        double sausageCost;
-        if (sausageSold < 1000) {
-            sausageCost = sausageCostLessThan1000;
-        } else if (sausageSold < 2000) {
-            sausageCost = sausageCostBetween1000And2000;
+        BigDecimal totalIncome = sausageIncome.add(hamIncome).add(neckIncome);
+
+        // Себестоимость
+        BigDecimal sausageCost;
+        if (sausageSoldKg < 1000) {
+            sausageCost = sausageCostUnder1000;
+        } else if (sausageSoldKg < 2000) {
+            sausageCost = sausageCost1000to2000;
         } else {
-            sausageCost = sausageCostMoreThan2000;
+            sausageCost = sausageCostOver2000;
         }
 
-        double neckCost;
-        if (neckSold < 500) {
-            neckCost = neckCostLessThan500;
+        BigDecimal neckCost;
+        if (neckSoldKg < 500) {
+            neckCost = neckCostUnder500;
         } else {
-            neckCost = neckCostMoreThan500;
+            neckCost = neckCostOver500;
         }
 
-        double totalCost = (sausageCost * sausageSold) + (hamCost * hamSold) + (neckCost * neckSold) + 1_000_000;
+        BigDecimal sausageExpense = sausageCost.multiply(BigDecimal.valueOf(sausageSoldKg));
+        BigDecimal hamExpense = hamCost.multiply(BigDecimal.valueOf(hamSoldKg));
+        BigDecimal neckExpense = neckCost.multiply(BigDecimal.valueOf(neckSoldKg));
 
-        double profitBeforeTaxes = totalIncome - totalCost;
+        BigDecimal totalExpense = sausageExpense.add(hamExpense).add(neckExpense).add(BigDecimal.valueOf(1_000_000));
 
-        double taxes;
-        if (profitBeforeTaxes > 2_000_000) {
-            taxes = (1_000_000 * 0.08) + (1_000_000 * 0.10) + ((profitBeforeTaxes - 2_000_000) * 0.13);
-        } else if (profitBeforeTaxes > 1_000_000) {
-            taxes = (1_000_000 * 0.08) + ((profitBeforeTaxes - 1_000_000) * 0.10);
-        } else {
-            taxes = profitBeforeTaxes * 0.08;
+        // Прибыль до налогов
+        BigDecimal preTaxProfit = totalIncome.subtract(totalExpense);
+
+        // Расчитаем налоги
+        BigDecimal tax = calculateTax(preTaxProfit);
+
+        // Прибыль после налогов
+        BigDecimal postTaxProfit = preTaxProfit.subtract(tax);
+
+        // Печать результатов
+        System.out.printf("Прибыль до налогов: %s руб%n", preTaxProfit.setScale(2, RoundingMode.HALF_UP));
+        System.out.printf("Налог: %s руб%n", tax.setScale(2, RoundingMode.HALF_UP));
+        System.out.printf("Прибыль после налогов: %s руб%n", postTaxProfit.setScale(2, RoundingMode.HALF_UP));
+    }
+
+    private static BigDecimal calculateTax(BigDecimal profit) {
+        BigDecimal tax = BigDecimal.ZERO;
+
+        if (profit.compareTo(BigDecimal.valueOf(2_000_000)) > 0) {
+            BigDecimal over2M = profit.subtract(BigDecimal.valueOf(2_000_000));
+            tax = tax.add(over2M.multiply(BigDecimal.valueOf(0.13)));
+
+            profit = BigDecimal.valueOf(2_000_000);
         }
 
-        double profitAfterTaxes = profitBeforeTaxes - taxes;
+        if (profit.compareTo(BigDecimal.valueOf(1_000_000)) > 0) {
+            BigDecimal over1M = profit.subtract(BigDecimal.valueOf(1_000_000));
+            tax = tax.add(over1M.multiply(BigDecimal.valueOf(0.10)));
 
-        System.out.println("Прибыль после налогов: " + profitAfterTaxes);
+            profit = BigDecimal.valueOf(1_000_000);
+        }
+
+        tax = tax.add(profit.multiply(BigDecimal.valueOf(0.08)));
+
+        return tax;
     }
 }
