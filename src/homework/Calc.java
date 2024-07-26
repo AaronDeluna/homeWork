@@ -8,7 +8,8 @@ public class Calc {
         System.out.println("Введите первое число: ");
         double a = scanner.nextDouble();
         System.out.println("Введите знак операции - \"+\", \"-\", \"*\", \"/\"");
-        String operation = scanner.nextLine();
+        String operation = scanner.next();
+        System.out.println("Введите второе число: ");
         double b = scanner.nextDouble();
 
         switch (operation) {
