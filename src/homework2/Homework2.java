@@ -1,5 +1,7 @@
 package homework2;
 
+import homework2.office.Office;
+
 import java.util.Random;
 
 public class Homework2 {
