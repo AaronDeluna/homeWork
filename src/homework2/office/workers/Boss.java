@@ -1,9 +1,9 @@
 package homework2.office.workers;
 
-public class Bos {
+public class Boss {
     private String name;
 
-    public Bos(String name) {
+    public Boss(String name) {
         this.name = name;
     }
 

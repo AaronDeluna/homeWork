@@ -1,7 +1,5 @@
 package homework2;
 
-import homework2.office.Office;
-
 import java.util.Random;
 
 public class Homework2 {
@@ -19,14 +17,11 @@ public class Homework2 {
         String[] words = {"Это", "шашлык", "на", "шампуре"};
         String result = "";
 
-        for (int i = 0; i < words.length; i++) {
-            result += words[i].substring(0, words[i].length());
-            if (i < words.length - 1) {
-                result += "-";
-            }
+        for (String word : words) {
+            result += word + "-";
         }
 
-        System.out.println(result);
+        System.out.println(result.substring(0, result.length() - 1));
     }
 
     public static void ex2() {
@@ -56,11 +51,9 @@ public class Homework2 {
 
     public static void ex3() {
         Random random = new Random(1);
-        int number = 0;
         int count = 0;
 
-        while (number != 999) {
-            number = random.nextInt(1000);
+        while (random.nextInt(1000) != 999) {
             count++;
         }
 
