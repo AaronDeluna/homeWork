@@ -12,11 +12,6 @@ public class Samsung extends Phone {
         this.processor = processor;
     }
 
-    //TODO - Подумать над методом, возможно он тут и не нужен
-    public void takePhoto() {
-        super.takePhoto();
-    }
-
     public Processor getProcessor() {
         return processor;
     }
