@@ -15,20 +15,4 @@ public abstract class Phone {
     public void takePhoto() {
         camera.takePhoto();
     }
-
-    public Camera getCamera() {
-        return camera;
-    }
-
-    public void setCamera(Camera camera) {
-        this.camera = camera;
-    }
-
-    public Frame getFrame() {
-        return frame;
-    }
-
-    public void setFrame(Frame frame) {
-        this.frame = frame;
-    }
 }

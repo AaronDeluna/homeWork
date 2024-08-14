@@ -11,12 +11,4 @@ public class Samsung extends Phone {
         super(camera, frame);
         this.processor = processor;
     }
-
-    public Processor getProcessor() {
-        return processor;
-    }
-
-    public void setProcessor(Processor processor) {
-        this.processor = processor;
-    }
 }
