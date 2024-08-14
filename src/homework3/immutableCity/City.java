@@ -11,6 +11,13 @@ public final class City {
         this.houses = houses;
     }
 
+    public House getHouse(int index) {
+        if (index >= 0 && index < houses.length) {
+            return new House(houses[index]);
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         return "City{" +

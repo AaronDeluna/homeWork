@@ -9,20 +9,17 @@ public class House {
         this.houseNumber = houseNumber;
     }
 
+    public House(House house) {
+        this.streetName = house.streetName;
+        this.houseNumber = house.houseNumber;
+    }
+
     public String getStreetName() {
         return streetName;
     }
 
-    public void setStreetName(String streetName) {
-        this.streetName = streetName;
-    }
-
     public int getHouseNumber() {
         return houseNumber;
-    }
-
-    public void setHouseNumber(int houseNumber) {
-        this.houseNumber = houseNumber;
     }
 
     @Override

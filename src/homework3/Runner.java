@@ -1,5 +1,7 @@
 package homework3;
 
+import homework3.immutableCity.City;
+import homework3.immutableCity.House;
 import homework3.phoneFactory.factory.IphoneFactory;
 import homework3.phoneFactory.factory.SamsungFactory;
 import homework3.phoneFactory.phone.Iphone;
@@ -13,6 +15,8 @@ public class Runner {
         ex2();
         System.out.println("-------------------");
         ex3();
+        System.out.println("-------------------");
+        ex4();
     }
 
     public static void ex1() {
@@ -49,7 +53,13 @@ public class Runner {
         //3. Сделать так, что если дом получен из города, то при изменении свойств этого дома,
         // эти изменения не затронут дом находящийся внутри города.
         // Т.е. результат должен соответствовать псевдокоду ниже:
-        //
+
+        House[] houses = {
+                new House("Ленина", 32),
+                new House("Победа", 78)
+        };
+        City city = new City("Москва", houses);
+        System.out.println(city);
         // City city = new City({new House('Lenina', 1)});
         // System.out.println(city);
         //-- City{House{street: Lenina, house: 1}}
