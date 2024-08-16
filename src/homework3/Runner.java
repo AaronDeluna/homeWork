@@ -1,11 +1,11 @@
 package homework3;
 
-import homework3.immutableCity.City;
-import homework3.immutableCity.House;
-import homework3.phoneFactory.factory.IphoneFactory;
-import homework3.phoneFactory.factory.SamsungFactory;
-import homework3.phoneFactory.phone.Iphone;
-import homework3.phoneFactory.phone.Samsung;
+import homework3.immutable_city.City;
+import homework3.immutable_city.House;
+import homework3.phone_factory.factory.IphoneFactory;
+import homework3.phone_factory.factory.SamsungFactory;
+import homework3.phone_factory.phone.Iphone;
+import homework3.phone_factory.phone.Samsung;
 import homework3.pyramid.Pyramid1;
 
 public class Runner {
@@ -41,34 +41,11 @@ public class Runner {
      * Для продвинутых
      */
     public static void ex4() {
-        //Зада: Иммутабельный город.
-        //
-        //Создать класс House (наименование улицы, номер дома) - создать сеттеры! и геттеры на него.
-        //Переопределить вывод в текст - вывод улицы и номера дома
-        //Создать иммутабельный класс City (наименование города, и массив домов).
-        //Переопределить вывод в текст - чтобы выводило имя города, и все дома
-        //
-        //1. Создать два дома, создать город с массивом созданных домов
-        //2. Сделать так, чтобы у города нельзя было поменять свойства.
-        //3. Сделать так, что если дом получен из города, то при изменении свойств этого дома,
-        // эти изменения не затронут дом находящийся внутри города.
-        // Т.е. результат должен соответствовать псевдокоду ниже:
-
         House[] houses = {
                 new House("Ленина", 32),
                 new House("Победа", 78)
         };
         City city = new City("Москва", houses);
         System.out.println(city);
-        // City city = new City({new House('Lenina', 1)});
-        // System.out.println(city);
-        //-- City{House{street: Lenina, house: 1}}
-        //House house = city.getHouses()[0];
-        //house.setStreet('Kotova');
-        //System.out.println(house);
-        //-- House{street: Kotova, house: 1}
-        //System.out.println(city);
-        //-- City{House{street: Lenina, house: 1}}
-
     }
 }

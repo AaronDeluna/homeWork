@@ -1,11 +1,12 @@
-package homework3.phoneFactory.factory;
+package homework3.phone_factory.factory;
 
-import homework3.phoneFactory.components.Camera;
-import homework3.phoneFactory.components.Frame;
-import homework3.phoneFactory.components.Processor;
-import homework3.phoneFactory.phone.Samsung;
+import homework3.phone_factory.components.Camera;
+import homework3.phone_factory.components.Frame;
+import homework3.phone_factory.components.Processor;
+import homework3.phone_factory.phone.Samsung;
 
 public class SamsungFactory {
+
     public static Samsung createSamsung() {
         Processor processor = new Processor(1500);
         Camera camera = new Camera(16);

@@ -1,4 +1,4 @@
-package homework3.phoneFactory.components;
+package homework3.phone_factory.components;
 
 public class Camera {
     private int megapixels;
