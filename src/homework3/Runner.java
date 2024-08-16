@@ -1,11 +1,11 @@
 package homework3;
 
-import homework3.immutable_city.City;
-import homework3.immutable_city.House;
-import homework3.phone_factory.factory.IphoneFactory;
-import homework3.phone_factory.factory.SamsungFactory;
-import homework3.phone_factory.phone.Iphone;
-import homework3.phone_factory.phone.Samsung;
+import homework3.immutable.city.City;
+import homework3.immutable.city.House;
+import homework3.phone.factory.factory.IphoneFactory;
+import homework3.phone.factory.factory.SamsungFactory;
+import homework3.phone.factory.phone.Iphone;
+import homework3.phone.factory.phone.Samsung;
 import homework3.pyramid.Pyramid1;
 
 public class Runner {

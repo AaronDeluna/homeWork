@@ -1,7 +1,7 @@
-package homework3.phone_factory.phone;
+package homework3.phone.factory.phone;
 
-import homework3.phone_factory.components.Camera;
-import homework3.phone_factory.components.Frame;
+import homework3.phone.factory.components.Camera;
+import homework3.phone.factory.components.Frame;
 
 public abstract class Phone {
     private Camera camera;

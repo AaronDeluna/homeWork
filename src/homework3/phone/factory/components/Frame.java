@@ -1,4 +1,4 @@
-package homework3.phone_factory.components;
+package homework3.phone.factory.components;
 
 public class Frame {
     private int width;

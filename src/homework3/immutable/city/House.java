@@ -1,4 +1,4 @@
-package homework3.immutable_city;
+package homework3.immutable.city;
 
 public class House {
     private String streetName;

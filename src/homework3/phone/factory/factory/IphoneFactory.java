@@ -1,9 +1,9 @@
-package homework3.phone_factory.factory;
+package homework3.phone.factory.factory;
 
-import homework3.phone_factory.components.Camera;
-import homework3.phone_factory.components.Frame;
-import homework3.phone_factory.components.Processor;
-import homework3.phone_factory.phone.Iphone;
+import homework3.phone.factory.components.Camera;
+import homework3.phone.factory.components.Frame;
+import homework3.phone.factory.components.Processor;
+import homework3.phone.factory.phone.Iphone;
 
 public class IphoneFactory {
 

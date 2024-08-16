@@ -1,8 +1,8 @@
-package homework3.phone_factory.phone;
+package homework3.phone.factory.phone;
 
-import homework3.phone_factory.components.Camera;
-import homework3.phone_factory.components.Frame;
-import homework3.phone_factory.components.Processor;
+import homework3.phone.factory.components.Camera;
+import homework3.phone.factory.components.Frame;
+import homework3.phone.factory.components.Processor;
 
 public class Iphone extends Phone {
     private Processor[] processors;
