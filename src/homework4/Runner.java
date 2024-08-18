@@ -1,20 +1,35 @@
 package homework4;
 
+import homework4.ex1.CarWash;
+import homework4.ex1.cars.Bus;
+import homework4.ex1.cars.PassengerCar;
+
 public class Runner {
+    public static void main(String[] args) {
+        ex1();
+    }
     public static void ex1() {
-        //Создать легковую машину (атрибуты: чистая/грязная, размеры(ширина,высота,длина), наличие круиз контроля)
-        //Создать автобус (атрибуты: чистый/грязный, размеры(ширина,высота,длина), макс количество пассажиров)
-        //Создать автомойку
-        //Автомойка умеет мыть машину. Делает машину чистой. Возвращает стоимость помывки.
-        //Автомойка умеет мыть машины. Делает машины чистыми. Возвращает стоимость помывки за все машины.
-        //Категории автомобилей:
-        //если длина > 6 или высота > 2.5 метра или ширина > 2, то машина считается крупной
-        //иначе считается маломерной.
-        //тариф 4000 - для крупных авто.
-        //тариф 2000 - для маломерных.
-        //В автомойку были отправлены грязные машины мэрии: 4 легковых(длина высота ширина) (5х2х1.8),
-        //5 автобусов(12х3х2.3)
-        //Посчитать и вывести: сколько мэрия заплатит денег за мойку всех машин.
+        PassengerCar[] passengerCars = {
+                new PassengerCar(5, 2, 1.8, true),
+                new PassengerCar(5, 2, 1.8, true),
+                new PassengerCar(5, 2, 1.8, true),
+                new PassengerCar(5, 2, 1.8, true)
+        };
+
+        Bus[] buses = {
+                new Bus(12, 3, 2.3, 20),
+                new Bus(12, 3, 2.3, 20),
+                new Bus(12, 3, 2.3, 20),
+                new Bus(12, 3, 2.3, 20),
+                new Bus(12, 3, 2.3, 20)
+        };
+
+        CarWash carWash = new CarWash();
+        int totalPriceForCar = carWash.washVehicles(passengerCars);
+        int totalPriceForBus = carWash.washVehicles(buses);
+
+        System.out.printf("За мойку машин заплатит мерия: %s" +
+                "\nЗа мойку автобусов: %s", totalPriceForCar, totalPriceForBus);
     }
 
     public static void ex2() {
