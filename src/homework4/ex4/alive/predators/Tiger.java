@@ -1,9 +1,11 @@
 package homework4.ex4.alive.predators;
 
 import homework4.ex4.alive.Alive;
-import homework4.ex4.alive.exception.CannotAttackException;
+import homework4.ex4.alive.exceptions.CannotAttackException;
 
 public class Tiger extends Predator {
+
+    private static final int COEFFICIENT_WEIGHT = 3;
 
     public Tiger(double weight) {
         super(weight);
@@ -18,7 +20,7 @@ public class Tiger extends Predator {
         if (prey.getWeight() > this.getWeight() * 2) {
             this.dies();
         } else {
-            double gainedWeight = prey.getWeight() / 3.0;
+            double gainedWeight = prey.getWeight() / COEFFICIENT_WEIGHT;
             prey.dies();
             this.increaseWeight(gainedWeight);
         }

@@ -1,8 +1,5 @@
 package homework4.ex4.alive.predators;
 
-import homework4.ex4.alive.Alive;
-import homework4.ex4.alive.exception.CannotAttackException;
-
 public class Wolf extends Predator {
 
     public Wolf(double weight) {

@@ -3,7 +3,7 @@ package homework4.ex2;
 import homework4.ex2.exceptions.FlyException;
 
 public class Duck implements Flyable{
-    private boolean isInjured;
+    private  boolean isInjured;
 
     public Duck(boolean isInjured) {
         this.isInjured = isInjured;

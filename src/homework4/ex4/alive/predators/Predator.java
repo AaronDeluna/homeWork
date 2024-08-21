@@ -1,7 +1,7 @@
 package homework4.ex4.alive.predators;
 
 import homework4.ex4.alive.Alive;
-import homework4.ex4.alive.exception.CannotAttackException;
+import homework4.ex4.alive.exceptions.CannotAttackException;
 
 public abstract class Predator extends Alive {
 
