@@ -1,5 +1,6 @@
 package homework4.ex4;
 
+import homework4.ex4.alive.Alive;
 import homework4.ex4.alive.herbivores.Elephant;
 import homework4.ex4.alive.herbivores.Rabbit;
 import homework4.ex4.alive.predators.Tiger;
