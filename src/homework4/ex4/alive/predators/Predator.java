@@ -4,6 +4,7 @@ import homework4.ex4.alive.Alive;
 import homework4.ex4.alive.exceptions.CannotAttackException;
 
 public abstract class Predator extends Alive {
+    private static final int COEFFICIENT_WEIGHT = 3;
 
     public Predator(double weight) {
         super(weight);
@@ -17,7 +18,7 @@ public abstract class Predator extends Alive {
         if (prey.getWeight() > this.getWeight()) {
             this.dies();
         } else {
-            double gainedWeight = prey.getWeight() / 3.0;
+            double gainedWeight = prey.getWeight() / COEFFICIENT_WEIGHT;
             prey.dies();
             this.increaseWeight(gainedWeight);
         }
