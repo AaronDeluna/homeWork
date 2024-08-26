@@ -1,10 +1,10 @@
 package homework4.ex1.cars;
 
 public abstract class Vehicle {
-    private boolean isClean;
-    private int length;
-    private int height;
-    private double width;
+    protected boolean isClean;
+    protected int length;
+    protected int height;
+    protected double width;
 
     public Vehicle(int length, int height, double width) {
         this.isClean = false;

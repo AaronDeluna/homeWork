@@ -25,6 +25,7 @@ public class CarWash {
     public int washVehicles(Vehicle[] vehicles) {
         int totalPrice = 0;
         for (Vehicle vehicle : vehicles) {
+            vehicle.setClean(true);
             if (vehicle.getLength() > LENGTH || vehicle.getHeight() > HEIGHT || vehicle.getWidth() > WIDTH) {
                 totalPrice += TARIFF_FOR_LARGE_VEHICLES;
             } else {

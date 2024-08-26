@@ -1,8 +1,8 @@
 package homework4.ex4.alive;
 
 public abstract class Alive {
-    private boolean isAlive;
-    private double weight;
+    protected boolean isAlive;
+    protected double weight;
 
     public Alive(double weight) {
         this.isAlive = true;
