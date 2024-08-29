@@ -14,7 +14,7 @@ public class ComputerSpy extends Computer {
         try {
             writeToFile("Пользователь: " + name + " вошел");
             super.userLogin(name);
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Ошибка при входе пользователя: " + e.getMessage());
         }
     }
@@ -24,7 +24,7 @@ public class ComputerSpy extends Computer {
         try {
             writeToFile("Пользователь вышел");
             super.userExit();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Ошибка при выходе пользователя: " + e.getMessage());
         }
     }
@@ -34,15 +34,15 @@ public class ComputerSpy extends Computer {
         try {
             writeToFile("Пользователь: " + user.getName() + " отправил сообщение: " + message);
             super.sendMessage(message);
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Ошибка при отправке сообщения: " + e.getMessage());
         }
     }
 
     public void writeToFile(String message) throws IOException {
-        try (FileOutputStream outputStream = new FileOutputStream("comp.log", true);
-             PrintWriter writer = new PrintWriter(outputStream)) {
-            writer.println(message);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("comp.log", true))) {
+            writer.write(message);
+            writer.newLine();
         }
     }
 }

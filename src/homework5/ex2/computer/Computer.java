@@ -12,7 +12,7 @@ public class Computer {
     }
 
     public void sendMessage(String message) {
-        System.out.printf("сообщение: %s\n", message);
+        System.out.printf("Сообщение: %s\n", message);
     }
 
     public User getUser() {
