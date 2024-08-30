@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Runner {
-    private static final int COUNTRIES = 0;
-    private static final int DONATION = 1;
+    private static final int COUNTRY_NAME = 0;
+    private static final int DONATION_FROM_COUNTRY = 1;
 
     public static void main(String[] args) throws FileNotFoundException {
         ex1();
@@ -27,9 +27,11 @@ public class Runner {
             String[] donationInfo = scanner.nextLine().split(";");
 
             for (int i = 0; i < countries.length; i++) {
-                if (countries[i].equals(donationInfo[COUNTRIES])) {
+                if (countries[i].equals(donationInfo[COUNTRY_NAME])) {
                     try {
-                        BigDecimal donationSum = new BigDecimal(donationInfo[DONATION].replace(',', '.'));
+                        BigDecimal donationSum = new BigDecimal(
+                                donationInfo[DONATION_FROM_COUNTRY].replace(',', '.')
+                        );
                         totalSums[i] = totalSums[i].add(donationSum);
                     } catch (NumberFormatException e) {
                     }

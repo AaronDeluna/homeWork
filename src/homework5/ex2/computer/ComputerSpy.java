@@ -33,7 +33,7 @@ public class ComputerSpy extends Computer {
     public void sendMessage(String message) {
         try {
             writeToFile("Пользователь: " + user.getName() + " отправил сообщение: " + message);
-            super.sendMessage(message);
+            computer.sendMessage(message);
         } catch (IOException e) {
             System.out.println("Ошибка при отправке сообщения: " + e.getMessage());
         }
